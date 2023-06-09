@@ -18,7 +18,7 @@ RUN apt-get install -y --no-install-recommends \
 # Create Colcon workspace and clone the needed source code to run the demo
 RUN mkdir -p /root/isaac_moveit_tutorial_ws/src
 WORKDIR /root/isaac_moveit_tutorial_ws/src
-RUN git clone https://github.com/DarK404/UR_Isaac-sim -b main .\
+RUN git clone https://github.com/DarK404/UR_Isaac-sim .\
     && git clone https://github.com/Dark404/robotiq_85_gripper.git \
     && cd .. \
     && source /opt/ros/humble/setup.bash && colcon build --symlink-install
