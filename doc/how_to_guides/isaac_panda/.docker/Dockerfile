@@ -2,6 +2,9 @@ FROM osrf/ros:humble-desktop-jammy
 
 SHELL ["/bin/bash", "-c", "-o", "pipefail"]
 
+ARG CUDA_MAJOR_VERSION=11
+ARG CUDA_MINOR_VERSION=7
+
 RUN echo "deb [trusted=yes] https://raw.githubusercontent.com/moveit/moveit2_packages/jammy-humble/ ./" \
     | sudo tee /etc/apt/sources.list.d/moveit_moveit2_packages.list
 RUN echo "yaml https://raw.githubusercontent.com/moveit/moveit2_packages/jammy-humble/local.yaml humble" \
